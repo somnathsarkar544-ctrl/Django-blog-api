@@ -113,7 +113,7 @@ POST	 /api/profiles/{username}/follow/	     Follow a user
 DELETE	/api/profiles/{username}/follow/	    Unfollow a user
 
 
-Articles
+## Articles
 
 Method	Endpoint	                    Description
 
@@ -125,7 +125,7 @@ DELETE	/api/articles/{slug}/    Delete article
 GET  	/api/articles/feed/	       Personalized feed
 
 
-Comments
+## Comments
 
 Method	Endpoint	                     Description
 
