@@ -5,7 +5,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
-Django Blog API
+## Django Blog API
 
 A fully functional RESTful Blog API built with Django, Django REST Framework, PostgreSQL, and JWT authentication.
 This project demonstrates practical backend engineering skills such as user authentication, profile management, following system, article creation, tags, comments, likes, and personalized feeds.
@@ -13,9 +13,9 @@ This project demonstrates practical backend engineering skills such as user auth
 
 ---
 
-Features
+## Features
 
-Authentication
+## Authentication
 
 Register new users
 
@@ -24,14 +24,14 @@ Login using JWT
 Refresh access tokens
 
 
-Users
+## Users
 
 Retrieve current logged-in user
 
 Update authenticated user details
 
 
-Profiles
+## Profiles
 
 View any user's profile
 
@@ -40,7 +40,7 @@ Follow or unfollow users
 Check following status
 
 
-Articles
+## Articles
 
 Create, retrieve, update, and delete articles
 
@@ -55,7 +55,7 @@ Mark and unmark articles as favorite
 Personalized feed showing articles from followed users
 
 
-Comments
+## Comments
 
 Add comments to articles
 
@@ -67,7 +67,7 @@ Delete own comments
 
 ---
 
-Tech Stack
+## Tech Stack
 
 Python 3
 
@@ -85,50 +85,50 @@ drf-spectacular for API documentation
 
 ---
 
-API Endpoints Overview
+## API Endpoints Overview
 
-Authentication
+## Authentication
 
-Method	Endpoint	Description
+Method	 Endpoint	          Description
 
-POST	/api/users/	Register a new user
-POST	/api/login/	Login and receive JWT tokens
-POST	/api/token/refresh/	Refresh access token
-
-
-Users
-
-Method	Endpoint	Description
-
-GET	/api/user/	Retrieve current authenticated user
-PUT/PATCH	/api/user/	Update authenticated user
+POST	/api/users/	          Register a new user
+POST	/api/login/	          Login and receive JWT tokens
+POST	/api/token/refresh/ 	Refresh access token
 
 
-Profiles
+## Users
 
-Method	Endpoint	Description
+Method      Endpoint  	    Description
 
-GET	/api/profiles/{username}/	Retrieve a public profile
-POST	/api/profiles/{username}/follow/	Follow a user
-DELETE	/api/profiles/{username}/follow/	Unfollow a user
+GET	       /api/user/	      Retrieve current authenticated user
+PUT/PATCH	 /api/user/	      Update authenticated user
+
+
+## Profiles
+
+Method	    Endpoint	                         Description
+
+GET	   /api/profiles/{username}/	            Retrieve a public profile
+POST	 /api/profiles/{username}/follow/	     Follow a user
+DELETE	/api/profiles/{username}/follow/	    Unfollow a user
 
 
 Articles
 
-Method	Endpoint	Description
+Method	Endpoint	                    Description
 
-GET	/api/articles/	List all articles with filters
-POST	/api/articles/	Create new article
-GET	/api/articles/{slug}/	Retrieve single article
-PUT/PATCH	/api/articles/{slug}/	Update article
-DELETE	/api/articles/{slug}/	Delete article
-GET	/api/articles/feed/	Personalized feed
+GET	  /api/articles/	           List all articles with filters
+POST	/api/articles/	           Create new article
+GET	  /api/articles/{slug}/	     Retrieve single article
+PUT/PATCH	/api/articles/{slug}/  Update article
+DELETE	/api/articles/{slug}/    Delete article
+GET  	/api/articles/feed/	       Personalized feed
 
 
 Comments
 
-Method	Endpoint	Description
+Method	Endpoint	                     Description
 
-GET	/api/articles/{slug}/comments/	List comments for article
-POST	/api/articles/{slug}/comments/	Add new comment
-DELETE	/api/comments/{id}/	Delete comment
+GET	/api/articles/{slug}/comments/	    List comments for article
+POST	/api/articles/{slug}/comments/	  Add new comment
+DELETE	/api/comments/{id}/           	Delete comment
