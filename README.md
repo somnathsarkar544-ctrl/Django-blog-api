@@ -5,165 +5,130 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
-# 📝 Django Blog API  
-A fully-featured *RESTful Blog API* built using *Django + Django REST Framework + JWT Authentication + PostgreSQL*.  
-Supports articles, comments, likes, profiles, following system, and personalized feeds.
+Django Blog API
+
+A fully functional RESTful Blog API built with Django, Django REST Framework, PostgreSQL, and JWT authentication.
+This project demonstrates practical backend engineering skills such as user authentication, profile management, following system, article creation, tags, comments, likes, and personalized feeds.
+
 
 ---
 
-## ⭐ Project Highlights
+Features
 
-- 🔐 JWT Authentication (Login + Refresh)
-- 📝 CRUD operations for Articles
-- 🔖 Tags System
-- 💬 Comments System
-- ❤ Like / Unlike Articles
-- 👤 User Profile View & Edit
-- ➕ Follow / Unfollow Users
-- 📰 Personalized Feed (articles from followed users)
-- 🐘 PostgreSQL Database
-- 📬 Fully testable using Postman Collection
+Authentication
+
+Register new users
+
+Login using JWT
+
+Refresh access tokens
+
+
+Users
+
+Retrieve current logged-in user
+
+Update authenticated user details
+
+
+Profiles
+
+View any user's profile
+
+Follow or unfollow users
+
+Check following status
+
+
+Articles
+
+Create, retrieve, update, and delete articles
+
+Filter articles by tags
+
+Filter articles by authors
+
+Sort articles by creation date or number of likes
+
+Mark and unmark articles as favorite
+
+Personalized feed showing articles from followed users
+
+
+Comments
+
+Add comments to articles
+
+View all comments for a specific article
+
+Delete own comments
+
+
 
 ---
 
-## 🛠 Tech Stack
+Tech Stack
 
-| Layer           | Technology                 |
-|----------------|-----------------------------|
-| Backend        | Django, Django REST Framework |
-| Auth           | JWT (SimpleJWT)            |
-| Database       | PostgreSQL                 |
-| Documentation  | DRF Spectacular (OpenAPI/Swagger) |
-| Testing        | Postman Collection          |
+Python 3
+
+Django
+
+Django REST Framework
+
+PostgreSQL
+
+JWT (djangorestframework-simplejwt)
+
+drf-spectacular for API documentation
+
+
 
 ---
 
-## 📂 Project Structure
-blog_api/ │── articles/ │   ├── models.py │   ├── views.py │   ├── serializers.py │   ├── urls.py │── comments/ │── users/ │── followers/ │── blog_api/ │── manage.py
+API Endpoints Overview
 
----
+Authentication
 
-## 🔥 Features in Detail
+Method	Endpoint	Description
 
-### 👤 Authentication
-- Register new users
-- Login using username & password
-- Receive access + refresh tokens
-- Get current logged-in user profile
-
----
-
-### 📝 Articles
-- Create, update, delete articles
-- Add tags
-- Like / Unlike articles
-- Filter by tag or author
-- Public article list
-- Detail view by slug
-
----
-
-### 💬 Comments
-- Add comments to articles  
-- Delete your own comments  
-
----
-
-### 👥 Profiles
-- View any user's profile
-- Follow / Unfollow users
-- You *cannot follow yourself* (validated)
-
----
-
-### 📰 Feed
-- Get articles ONLY from users you follow (personalized feed)
-
----
-
-## 📡 API Endpoints Overview
-
-### 🔐 *Auth*
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| POST | /api/users/ | Register new user |
-| POST | /api/login/ | Login (get JWT) |
-| POST | /api/token/refresh/ | Refresh token |
-
----
-
-### 👤 *User*
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| GET | /api/user/ | Get current logged-in user |
-| PUT/PATCH | /api/user/ | Update logged-in user |
-
----
-
-### 📄 *Articles*
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| GET | /api/articles/ | List all articles |
-| POST | /api/articles/ | Create article |
-| GET | /api/articles/{slug}/ | Article details |
-| PUT/PATCH | /api/articles/{slug}/ | Update |
-| DELETE | /api/articles/{slug}/ | Delete |
-| GET | /api/articles/feed/ | Personalized feed |
-
----
-
-### 💬 *Comments*
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| POST | /api/articles/{slug}/comments/ | Add comment |
-| DELETE | /api/comments/{id}/ | Delete comment |
-
----
-
-### 👥 *Profiles*
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| GET | /api/profiles/{username}/ | View profile |
-| POST | /api/profiles/{username}/follow/ | Follow user |
-| DELETE | /api/profiles/{username}/follow/ | Unfollow user |
-
----
-
-## 🚀 Installation & Setup
-
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/YOUR-USERNAME/Django-blog-api.git
-cd Django-blog-api
-```
-### 2️⃣ Create & activate a virtual enviroment 
-```bash
-python -m venv venv
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Mac/Linux
-```
-### 3️⃣ Install dependencies
-```bash
-pip install -r requirements.txt
-```
-### 4️⃣ Setup PostgresSQL database
-create a database blogdb,update .env or settings.
-
-### 5️⃣ Run migrations
-```bash
-python manage.py migrate
-```
-### 6️⃣ Start the server
-```bash
-python manage.py runsserver
-```
-
-🤝 Contributing
-
-Pull requests are welcome!
-Please follow clean commit messages and create feature-based branches.
+POST	/api/users/	Register a new user
+POST	/api/login/	Login and receive JWT tokens
+POST	/api/token/refresh/	Refresh access token
 
 
+Users
+
+Method	Endpoint	Description
+
+GET	/api/user/	Retrieve current authenticated user
+PUT/PATCH	/api/user/	Update authenticated user
 
 
+Profiles
 
+Method	Endpoint	Description
+
+GET	/api/profiles/{username}/	Retrieve a public profile
+POST	/api/profiles/{username}/follow/	Follow a user
+DELETE	/api/profiles/{username}/follow/	Unfollow a user
+
+
+Articles
+
+Method	Endpoint	Description
+
+GET	/api/articles/	List all articles with filters
+POST	/api/articles/	Create new article
+GET	/api/articles/{slug}/	Retrieve single article
+PUT/PATCH	/api/articles/{slug}/	Update article
+DELETE	/api/articles/{slug}/	Delete article
+GET	/api/articles/feed/	Personalized feed
+
+
+Comments
+
+Method	Endpoint	Description
+
+GET	/api/articles/{slug}/comments/	List comments for article
+POST	/api/articles/{slug}/comments/	Add new comment
+DELETE	/api/comments/{id}/	Delete comment
