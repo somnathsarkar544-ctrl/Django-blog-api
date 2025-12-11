@@ -87,7 +87,7 @@ drf-spectacular for API documentation
 
 ## API Endpoints Overview
 
-## Authentication
+Authentication
 
 Method	 Endpoint	          Description
 
