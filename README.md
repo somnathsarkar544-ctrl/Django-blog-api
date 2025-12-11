@@ -133,8 +133,9 @@ GET	/api/articles/{slug}/comments/	    List comments for article
 POST	/api/articles/{slug}/comments/	  Add new comment
 DELETE	/api/comments/{id}/           	Delete comment
 
----
+
 ## Project Structure
+```
 blog_api/
 │
 ├── articles/
@@ -143,4 +144,4 @@ blog_api/
 ├── blog_api/          # Core settings
 ├── requirements.txt
 └── manage.py
----
+```
