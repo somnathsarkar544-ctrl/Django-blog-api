@@ -1,0 +1,28 @@
+# Python
+_pycache_/
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+
+# Django
+db.sqlite3
+
+# Environment Variables
+.env
+
+# PyCharm / VSCode
+.idea/
+.vscode/
+
+# Byte-compiled
+*.pyc
+*.pyo
+*.pyd
+
+# Local static files
+staticfiles/
+
+# OS Files
+.DS_Store
